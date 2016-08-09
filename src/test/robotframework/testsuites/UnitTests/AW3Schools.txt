@@ -7,7 +7,7 @@ ${URL Application}    http://www.w3schools.com
 
 *** Test Cases ***
 Select
-    Open Browser    http://www.w3schools.com    firefox    mainbrowser
+	Open Browser    http://www.w3schools.com    firefox    mainbrowser
     Go To    http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_select
     Wait Until Page Contains Element    iframeResult
     Select Frame    iframeResult

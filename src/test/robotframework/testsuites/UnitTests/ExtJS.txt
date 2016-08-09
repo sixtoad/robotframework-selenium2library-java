@@ -4,8 +4,8 @@ Suite Teardown    Close Browser
 Library           Selenium2Library
 
 *** Variables ***
-${URL Application}     http://dev.sencha.com/deploy/ext-4.0.0/examples/writer/writer.html
-${add}                 extJsButton=button[text='Add']
+${URL Application}     http://examples.sencha.com/extjs/6.2.0-ea/examples/classic/writer/writer.html
+${add}                 extJsButton=button[text='Create']
 ${inputfield email}    extJsTextfield=textfield[name='email']
 
 *** Keywords ***
@@ -15,13 +15,12 @@ Open Page
     Add Location Strategy    extJsTextfield      return window.document.getElementById((Ext.ComponentQuery.query(arguments[0])[0]).getInputId());
     Open Browser    ${URL Application}    firefox    mainbrowser
     Log System Info
-    Log Remote Session Id
+    
     Log Remote Capabilities
 
 *** Test Cases ***
 Add Employee
-    Click Button    ${add}
+    Click Element    ${add}
     Capture Page Screenshot
-
     Input Text    ${inputfield email}    Haaalloooo Welt
     Capture Page Screenshot

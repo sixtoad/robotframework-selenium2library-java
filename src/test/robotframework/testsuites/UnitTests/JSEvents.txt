@@ -8,7 +8,7 @@ ${URL Application}     http://fiddle.jshell.net/ShPVX/show/
 
 *** Keywords ***
 Open Page
-    Open Browser    ${URL Application}
+    Open Browser    ${URL Application}	firefox
     Select Frame  xpath=//iframe
     Wait Until Page Contains Element    xpath=//select[@name='test']
     
